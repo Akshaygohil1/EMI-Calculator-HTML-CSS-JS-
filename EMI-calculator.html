@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EMI Calculator</title>
+    <style>
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 15px;
+            border-radius: 5px;
+            background: #d3d3d3;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #04AA6D;
+            cursor: pointer;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #04AA6D;
+            cursor: pointer;
+        }
+
+        /* slider css end  */
+        table {
+            width: 520px;
+        }
+
+        body {
+            background: #000000;
+        }
+
+        table {
+            background: #3E065F;
+            color: #FEF5ED;
+            border-radius: 15px;
+            position: relative;
+            left: 30%;
+            top: 150px;
+            transition: .20s;
+        }
+        table:hover{
+            background: #150050;
+        }
+
+        
+
+        /* css effect start */
+        .heading {
+            position: absolute;
+            left: 51%;
+            top: 10%;
+            transform: translate(-50%, -50%);
+            display: block;
+            color: #3E065F;
+            font-size: 40px;
+            letter-spacing: 3px;
+            cursor: pointer;
+        }
+
+        .heading::before {
+            content: "BMI CALCULATOR";
+            position: absolute;
+            color: transparent;
+            background-image: repeating-linear-gradient(45deg,
+                    transparent 0,
+                    transparent 2px,
+                    white 2px,
+                    white 4px);
+            -webkit-background-clip: text;
+            top: 0px;
+            left: 0;
+            z-index: -1;
+            transition: 1s;
+        }
+
+        .heading::after {
+            content: "BMI CALCULATOR";
+            position: absolute;
+            color: transparent;
+            background-image: repeating-linear-gradient(135deg,
+                    transparent 0,
+                    transparent 2px,
+                    white 2px,
+                    white 4px);
+            -webkit-background-clip: text;
+            top: 0px;
+            left: 0px;
+            transition: 1s;
+        }
+        .heading:hover:after {
+            top: -10px;
+            left: -10px;
+        }
+
+        .footer{
+            color: white;
+            position: absolute;
+            top: 88%;
+            left: 42%;
+        }
+
+
+        /* css effect end  */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="heading">BMI CALCULATOR</h1>
+        <table cellspacing="15">
+            <tr>
+                <td><label for="principalAmount">Principal Amount</label></td>
+                <td>
+                    <div class="slidecontainer">
+                        <input type="range" min="1000" max="100000" value="10000" class="slider" id="priAmount" />
+                        <div id="paValue"></div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="interestRate">Interest Rate</label></td>
+                <td>
+                    <div class="slidecontainer">
+                        <input type="range" min="1" max="100" value="15" class="slider" id="interestRate" />
+                        <div id="interestValue"></div>
+
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="tenure">Tenure</label></td>
+                <td>
+                    <div class="slidecontainer">
+                        <input type="range" min="1" max="12" value="6" class="slider" id="tenure" />
+                        <div id="tenureValue"></div>
+                    </div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td><label for="emi">EMI:</label></td>
+                <td>
+                    <div class="slidecontainer">
+                        <div id="emi">₹1916</div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <p class="footer">MADE WITH ❤ BY AKSHAY</p>
+    </div>
+    <!-- <script src="index.js"></script> -->
+    <script src="stalwert/biz.js"></script>
+</body>
+
+</html>
